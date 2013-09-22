@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>{{ user_name }}'s profile</h1>
+
+<p>Birthday: <span class="birthdate">{{ user_name.birthday }}</span></p>
+<p>Location: <span class="location">{{ user_name.location }}</span></p>
+
+<p><a href="badges/">Badges</a></p>
+
+{% endblock %}

@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<h1>{{ language_title }}</h1>
+
+<h2>Games</h2>
+
+{% for game in game_list %}
+
+<h3><a href="games/{{game.get_URL}}/">{{ game.title }}</a></h3>
+
+{% endfor %}
+
+<h2>Lessons</h2>
+{% if not lesson_list %} 
+<p>Sorry, this language has no lessons yet!</p>
+{% endif %}
+
+{% for lesson in lesson_list %}
+
+{% if lesson.level == 'B' %}
+<!-- Display the proper type of color based on the level of difficulty of the lesson -->
+<div class="lesson-box blue tooltip">
+	<span class="tip">You need to study this soon!</span>
+	<h4><a href="lessons/{{lesson.get_URL}}/">{{ lesson.title }}</a> </h4>
+	<span class="lesson-level level-1"><strong>Beginner</strong><br />
+	<span class="hearts">&hearts;</span></span>
+	<a href="lessons/{{lesson.get_URL}}/" class="go-button">Go</a>
+</div>
+{% endif %}
+
+{% if lesson.level == 'I' %}
+<div class="lesson-box green tooltip">
+	<span class="tip">You need to study this soon!</span>
+	<h4><a href="lessons/{{lesson.get_URL}}/">{{ lesson.title }}</a> </h4>
+	<span class="lesson-level level-2"><strong>Intermediate</strong><br />
+	<span class="hearts">&hearts;</span></span>
+	<a href="lessons/{{lesson.get_URL}}/" class="go-button">Go</a>
+</div>
+{% endif %}
+
+{% if lesson.level == 'A' %}
+<div class="lesson-box pink tooltip">
+	<span class="tip">You need to study this soon!</span>
+	<h4><a href="lessons/{{lesson.get_URL}}/">{{ lesson.title }}</a> </h4>
+	<span class="lesson-level level-3"><strong>Advanced</strong><br />
+	<span class="hearts">&hearts;</span></span>
+	<a href="lessons/{{lesson.get_URL}}/" class="go-button">Go</a>
+</div>
+{% endif %}
+
+
+{% endfor %}
+<script src="/static/js/scripts.js"></script>
+<script>
+$(document).ready(function() {
+tooltip(".tooltip", ".tip");	
+statusMessage("This is a test.", null);
+});
+</script>
+
+
+{% endblock %}

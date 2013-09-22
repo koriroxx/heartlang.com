@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+
+<div id="current-courses">
+			<h2>All Courses</h2>
+			<hr />
+			{% for language in language_list %}
+
+			<div class="current-courses-item">
+				<h3><a href="learn/{{language.title}}">{{ language.title }}</a></h3>
+				<p></p>
+				<div class="arrow-button go"> 
+					<a href="learn/{{language.title}}"><div class="arrow-right"></div></a>
+				</div>
+				<img src="" class="course-icon" />
+				
+			</div>
+			{% endfor %}
+		</div>
+<hr />
+
+		<h2> Recent Badges</h2>
+		<div id="recent-badges">
+
+	
+		<br />
+		<br />
+		{% for badge in badges_list %}
+
+		<div class="badge">
+		<div class="badge_hearts">
+			<div class="badge_icon">
+			<p class="badge_title"> {{ badge.title }} </p>
+			</div>
+		</div>
+		<p class="badge_description">{{ badge.language }}: {{ badge.description }} </p>
+		</div>
+		{% endfor %}
+		</div>
+
+{% endblock %}
+
+{% block login %}
+
+<div class="login-box">
+			<h1>Learn any language you want - free</h1>
+			<h2>Join others who are making themselves smarter.</h2>
+			<br />
+			<div class="login-buttons"><span class="button">Sign Up</span>&nbsp; or &nbsp;<span class="button">Log In</span></div>
+			</div>
+			<br />
+			<br />
+			<hr />
+			
+			<h2>How does it work?</h2>
+			
+			<h3>Step 1: Learn Patterns</h3>
+			<p>Science has shown that babies learn languages by recognizing patterns in the language used around them every day. The process also works well for adults.</p>
+			
+			<h3>Step 2: Use What's Learned</h3>
+			<p>If you don't use a piece of knowledge often enough, you'll forget it - kind of like the mathematics you took in high school or college. heartlang reinforces learned patterns
+			and vocabulary by making you use them.</p>
+			
+			<h3>Step 3: Put It All in Long-term Memory</h3>
+			<p>After a while, you don't need to see a term as often. This process is part of putting what's learned into long-term memory, when you can recall it on demand.</p>
+			 
+			<h3>Step 4: Rewards</h3>
+			<p>A big encouragement for learning is getting rewards for doing well. We've got a badge and "hearts" point system that you can use to redeem cool stuff!</p>
+			
+			<hr />
+			
+			<h2>Currently Available Languages</h2>
+			
+			<div id="current-courses">
+			{% for language in language_list %}
+			
+
+			<div class="current-courses-item">
+			
+				<h3><a href="learn/{{language.get_URL}}/lessons/">{{ language.title }}</a></h3>
+				<p></p>
+				<div class="arrow-button go"> 
+					<a href="learn/{{language.title}}"><div class="arrow-right"></div></a>
+				</div>
+				<img src="" class="course-icon" />
+				
+			</div>
+			{% endfor %}
+			</div>
+
+{% endblock %}

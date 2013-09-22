@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<h1>{{ language_title }}</h1>
+
+<h2>Level {{levelnum}}</h2>
+
+<table>
+{% for vocabulary in user_vocab %}
+<tr>
+	<td>{{vocabulary.english}}</td>
+	<td>{{vocabulary.strength}}</td>
+</tr>
+{% endfor %}
+
+</table>
+{% endif %}
+
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div id="current-courses">
+			<h1>All Games</h1>
+			{% for language in language_list %}
+			
+			<h2>{{ language.title }}</h2>
+		
+				
+			{% for game in language.get_games %}
+			
+			<h3>{{ game.title }}</h3>
+			
+			{% endfor %}
+				
+			</div>
+			{% endfor %}
+		</div>
+
+{% endblock %}

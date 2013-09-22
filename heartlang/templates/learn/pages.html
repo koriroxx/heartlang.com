@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<h1>{{ lesson_title }}</h1>
+{% for page in page_list %}
+
+<h2> <a href="{{page.get_URL}}">{{ page.title }} </a></h2>
+
+{% endfor %}
+
+<p><a href="../">Back</a></p>
+
+<div id="page-body">
+	
+	
+</div>
+
+
+
+{% endblock %}

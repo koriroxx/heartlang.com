@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div id="current-courses">
+			<h2>All Courses</h2>
+			<hr />
+			{% for language in language_list %}
+			
+
+			<div class="current-courses-item">
+			
+				<h3><a href="{{language.get_URL}}/">{{ language.title }}</a></h3>
+				<p></p>
+				<div class="arrow-button go"> 
+					<a href="{{language.title}}/lessons/"><div class="arrow-right"></div></a>
+				</div>
+				<img src="" class="course-icon" />
+				
+			</div>
+			{% endfor %}
+		</div>
+
+{% endblock %}
+
+{% block login %}
+
+<div class="login-box">
+			<h1>Oops!</h1>
+			<p>You need to be logged in to view this page. You can click the links below to get started!</p>
+			<br />
+		
+			<div class="login-buttons"><span class="button">Sign Up</span>&nbsp; or &nbsp;<span class="button">Log In</span></div>
+			<br />
+			</div>
+		
+
+{% endblock %}
+

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Languages {{ user_name }} is studying</h1>
+
+{% for language in user_languages %}
+
+
+<h3><a href="/learn/{{language.get_URL}}/lessons/">{{ language.title }}</a></h3>
+
+{% endfor %}
+
+<p><a href="../">Back</a></p>
+
+{% endblock %}

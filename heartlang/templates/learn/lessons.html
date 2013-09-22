@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<h1>{{ language_title }}</h1>
+
+{% for lesson in lesson_list %}
+
+{% if lesson.level == 'B' %}
+
+<div class="lesson-box blue tooltip">
+	<span class="tip">You need to study this soon!</span>
+	<h4><a href="lessons/{{lesson.get_URL}}/">{{ lesson.title }}</a> </h4>
+	<span class="lesson-level level-1"><strong>Beginner</strong><br />
+	<span class="hearts">&hearts;</span></span>
+	<a href="lessons/{{lesson.get_URL}}/" class="go-button">Go</a>
+</div>
+{% endif %}
+
+{% if lesson.level == 'I' %}
+<div class="lesson-box green tooltip">
+	<span class="tip">You need to study this soon!</span>
+	<h4><a href="lessons/{{lesson.get_URL}}/">{{ lesson.title }}</a> </h4>
+	<span class="lesson-level level-2"><strong>Intermediate</strong><br />
+	<span class="hearts">&hearts;</span></span>
+	<a href="lessons/{{lesson.get_URL}}/" class="go-button">Go</a>
+</div>
+{% endi
+{% endif %}
+
+{% if lesson.level == 'A' %}
+<div class="lesson-box pink tooltip">
+	<span class="tip">You need to study this soon!</span>
+	<h4><a href="lessons/{{lesson.get_URL}}/">{{ lesson.title }}</a> </h4>
+	<span class="lesson-level level-3"><strong>Advanced</strong><br />
+	<span class="hearts">&hearts;</span></span>
+	<a href="lessons/{{lesson.get_URL}}/" class="go-button">Go</a>
+</div>
+{% endif %}
+	
+
+
+
+
+{% endfor %}
+
+<script>
+	$(document).ready(function() {
+
+		$('.tooltip').hover(function() {
+			$(".tip", this).animate({
+				opacity: 1,
+				marginTop: "-75px",
+			}, 500, function () {
+			    
+			});
+
+			$('.tooltip').mouseleave(function() {
+					$(".tip", this).animate({
+						opacity: 0,
+						marginTop: "-125px",
+					}, 500, function () {
+					    $(this).remove();
+					});
+				});
+		});
+	});
+
+	</script>
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>{{ user_name }}'s Badges</h1>
+
+{% for badge in user_badges %}
+
+{% if badge.haslang %} <!-- If the language category already exists don't show again -->
+<h2 style="clear: both">{{ badge.language }}</h2>
+{% endif %}
+<div class="badge">
+<div class="badge_hearts">
+	<div class="badge_icon">
+	<p class="badge_title"> {{ badge.title }} </p>
+	</div>
+</div>
+<p class="badge_description"> {{ badge.description }} </p>
+</div>
+
+{% endfor %}
+
+<p style="clear: both"><a href="../">Back</a></p>
+
+{% endblock %}

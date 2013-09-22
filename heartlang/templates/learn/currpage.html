@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<h1>{{ page_content.title }}</h1>
+<h2> <a href="/learn/{{page_content.lesson.language.title}}">{{ page_content.lesson.language }}</a> >> <a href="/learn/{{page_content.lesson.language.title}}/lessons/{{page_content.lesson.get_URL}}">{{ page_content.lesson }}</a> </h2>
+
+{% if prev_page.pagenumber > 0 %} <a href="../{{ prev_page.get_URL }}">← Previous</a> {% endif %} {% if next_page.pagenumber > page_content.get_page_count %}<a href="../{{ next_page.get_URL }}">Next →</a> {% endif %}
+
+<div id="page-body">
+
+	{{ page_content.content|safe|linebreaks  }}
+	
+
+</div>
+
+{% endblock %}
