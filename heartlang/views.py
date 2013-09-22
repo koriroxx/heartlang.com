@@ -17,6 +17,9 @@ from heartlang.forms import RegisterForm
 def home(Request):
 	Languages = Language.objects.order_by("pk")
 	Posts = Post.objects.order_by("pk")
+	CurrProfile = None
+	totalhearts = None
+	
 	
 	if Request.user.is_authenticated(): 
 		#Set the current profile
@@ -46,15 +49,15 @@ def logout_page(Request):
 	
 
 def register(Request):
-	 """
-    Displays a form for a user to register with and 
-    then redircts them to their new profile
+	"""
+	Displays a form for a user to register with and 
+	then redircts them to their new profile
     """
 
 	if Request.method == 'POST':
 		form = RegisterForm(Request.POST)
 		""" if form.is_valid():
-            errors = form._errors.setdefault("__all__", ErrorList())
+		errors = form._errors.setdefault("__all__", ErrorList())
 			try:
 				User.objects.get(username__iexact=form.cleaned_data['username'])
 				errors.append(u'That username is already taken.')

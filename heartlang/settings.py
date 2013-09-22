@@ -14,7 +14,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': '/srv/www/heartlang.com/heartlang.db',                      # Or path to database file if using sqlite3.
+        'NAME': 'C:/Users/Leah/Programming/heartlang.com/heartlang/heartlang.db',                      # Or path to database file if using sqlite3.
         'USER': '',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
@@ -69,7 +69,7 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    "/srv/www/heartlang.com/heartlang/staticfiles",
+    "C:/Users/Leah/Programming/heartlang.com/heartlang/staticfiles",
 )
 
 # List of finder classes that know how to find static files in
@@ -106,7 +106,7 @@ ROOT_URLCONF = 'heartlang.urls'
 WSGI_APPLICATION = 'heartlang.wsgi.application'
 
 TEMPLATE_DIRS = (
-    "/srv/www/heartlang.com/heartlang/templates",
+    "C:/Users/Leah/Programming/heartlang.com/heartlang/templates",
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
