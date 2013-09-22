@@ -10,7 +10,7 @@ urlpatterns = patterns('',
     url(r'^blog/$', include('blog.urls')),
 	url(r'^profile/', include('users.urls')),
 	url(r'^register/', 'heartlang.views.register'),
-	url(r'^login/', 'heartlang.views.login'),
-	url(r'^logout/', 'heartlang.views.logout'), 
+	#url(r'^login/', 'heartlang.views.login'),
+	url(r'^logout/', 'heartlang.views.logout_page'), 
 )
 
